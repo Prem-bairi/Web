@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: rgb(6,4,53);
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        .dark-mode {
+            background-color: #121212;
+            color: #fff;
+        }
+        header {
+            background: rgb(4, 14, 90);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+            animation: fadeIn 1.5s ease-in-out;
+            text-shadow: 0px 0px 5px cyan,
+                         0px 0px 10px cyan,
+                         0px 0px 20px cyan,
+                         0px 0px 40px cyan;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 60px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: bold;
+            gap: 5px;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+        }
+        nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .dark-mode-toggle {
+            cursor: pointer;
+            font-size: 24px;
+            color: #fff;
+            transition: transform 0.3s ease-in-out;
+        }
+        .dark-mode-toggle:hover {
+            transform: scale(1.1);
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        section {
+            padding: 80px 20px 50px;
+            text-align: center;
+            color: #fff;
+        }
+        footer {
+            background: rgb(4, 14, 90);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            width: 100%;
+        }
+        /* About Section */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    max-width: 900px;
+    padding: 40px;
+    background: rgb(4, 14, 90);
+    margin-top: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(19, 209, 216, 0.558);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.03);
+}
+
+/* Image */
+.image {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+.image img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.image img:hover {
+    transform: rotate(5deg) scale(1.1);
+}
+
+/* Content */
+.content {
+    flex: 2;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #ffcc00;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #fff;
+    background: #bc0c84;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background: #ff0055;
+    transform: scale(1.1);
+}
+/* Skills Section */
+#skills {
+    text-align: center;
+    padding: 80px 20px;
+    color: #fff;
+}
+
+.skills-container {
+    display: flex;
+    /*display: grid;*/
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    max-width: 900px;
+    margin: auto;
+    padding: 40px;
+    background: rgb(4, 14, 90);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(19, 209, 216, 0.558);
+}
+
+.skill-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    justify-content: space-between;
+}
+
+.skill-box img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.skill-box:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+}
+/* Projects Section */
+#projects {
+    text-align: center;
+    padding: 80px 20px;
+    color: #fff;
+    background-color: rgb(6,4,53);
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Project Cards */
+.project-card {
+    background: rgb(4, 14, 90);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(19, 209, 216, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid cyan;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    color: #ffcc00;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+/* View Project Button */
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #fff;
+    background: #bc0c84;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background: #ff0055;
+    transform: scale(1.1);
+}
+/* Services Section */
+#services {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: rgb(6,4,53);
+    color: #fff;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Service Cards */
+.service-card {
+    background: rgb(4, 14, 90);
+    padding: 40px 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(19, 209, 216, 0.5);
+    transition: transform 0.3s ease-in-out, background 0.3s;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+    background: rgba(19, 209, 216, 0.2);
+}
+
+.service-card i {
+    font-size: 40px;
+    color: cyan;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #ddd;
+    line-height: 1.6;
+}
+/* Education Section */
+#education {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: rgb(6,4,53);
+    color: #fff;
+}
+
+.education-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Education Cards */
+.education-card {
+    background: rgb(4, 14, 90);
+    padding: 40px 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(19, 209, 216, 0.5);
+    transition: transform 0.3s ease-in-out, background 0.3s;
+}
+
+.education-card:hover {
+    transform: scale(1.05);
+    background: rgba(19, 209, 216, 0.2);
+}
+
+.education-card i {
+    font-size: 40px;
+    color: cyan;
+    margin-bottom: 15px;
+}
+
+.education-card h3 {
+    font-size: 1.5rem;
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+.education-card p {
+    font-size: 1rem;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.education-card span {
+    font-size: 0.9rem;
+    color: #bbb;
+    font-weight: bold;
+}
+/* Contact Section */
+#contact {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: rgb(6,4,53);
+    color: #fff;
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 30px;
+    color: #fff;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+}
+
+/* Specific colors for each icon */
+.social-links a:nth-child(1) { color: #E1306C; } /* Instagram */
+.social-links a:nth-child(2) { color: #1877F2; } /* Facebook */
+.social-links a:nth-child(3) { color: #000000; } /* X (Twitter) */
+.social-links a:nth-child(4) { color: #0077B5; } /* LinkedIn */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+               
+            }
+            .logo {
+            font-size: 35px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+            animation: fadeIn 1.5s ease-in-out;
+            text-shadow: 0px 0px 5px cyan,
+                         0px 0px 10px cyan,
+                         0px 0px 20px cyan,
+                         0px 0px 40px cyan;
+        }
+            nav ul {
+        display: none; /* Hide all menu links */
+    }
+
+    /* Ensure Dark Mode Icon Stays Visible */
+    .dark-mode-toggle {
+        display: block !important; /* Keep it visible */
+        font-size: 24px;
+        cursor: pointer;
+    }
+            .container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .image img {
+         
+        width: 130pxpx;
+        height: auto;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+    header {
+    height: 50pxpx; /* Increase height */
+    padding: 0.5rem;
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on mobile */
+        padding: 20px;
+    }
+}
+
+/* Push About Section Below Navbar */
+.about {
+    margin-top: 100px; /* Adjust this if needed */
+}
+    /* Fix Navbar UL Links Overflow */
+
+
+
+header {
+     /* Keep navbar height fixed */
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Ensure About Section Starts Below Navbar */
+.about {
+    margin-top: 120px; /* Increased margin for better spacing */
+    padding-top: 20px; /* Extra padding for visual spacing */
+}
+.projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card img {
+        height: 180px;
+    }
+
+    .project-info h3 {
+        font-size: 1.3rem;
+    }
+
+    .project-info p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+    .skills-container {
+        flex-direction: column;
+    }
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: 30px;
+    }
+
+    .service-card i {
+        font-size: 35px;
+    }
+
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .service-card p {
+        font-size: 0.9rem;
+    }
+    .education-container {
+        grid-template-columns: 1fr;
+    }
+
+    .education-card {
+        padding: 30px;
+    }
+
+    .education-card i {
+        font-size: 35px;
+    }
+
+    .education-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .education-card p, .education-card span {
+        font-size: 0.9rem;
+    }
+    .social-links a {
+        font-size: 25px;
+        margin: 0 10px;
+    }
+
+}
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">My Portfolio</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><div class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</div></li>
+            </ul>
+        </nav>
+      
+    </header>
+    
+    <section id="about">
+        
+            <div class="container">
+                <div class="image">
+                    <img src="3d image.webp" alt="Your Photo">
+                </div>
+                <div class="content">
+                    <h2>About Me</h2>
+                    <p>I'm a passionate web developer with a love for creating beautiful and functional websites. With expertise in front-end and back-end development, I strive to deliver elegant solutions that offer a seamless user experience.</p>
+                    <a href="#contact" class="btn">Contact Me</a>
+                </div>
+            </div>
+        
+    </section>
+    
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill-box">
+                <img src="html.png" alt="HTML">
+                <p>HTML</p>
+            </div>
+            <div class="skill-box">
+                <img src="Logo-CSS3.svg" alt="CSS">
+                <p>CSS</p>
+            </div>
+            <div class="skill-box">
+                <img src="R.png" alt="JavaScript">
+                <p>JavaScript</p>
+            </div>
+            
+            <div class="skill-box">
+                <img src="image-6.jpeg" alt="Bootstrap">
+                <p>Bootstrap</p>
+            </div>
+            <div class="skill-box">
+                <img src="OIP.jpeg" alt="Tailwind CSS">
+                <p>Tailwind CSS</p>
+            </div>
+            <div class="skill-box">
+                <img src="GitHub-1024.webp" alt="Git & GitHub">
+                <p>Git & GitHub</p>
+            </div>
+            <div class="skill-box">
+                <img src="java.jpeg" alt="java">
+                <p>Java</p>
+            </div>
+            
+        </div>
+    </section>
+    
+    
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <img src="ai.webp" alt="Project 1">
+                <div class="project-info">
+                    <h3>Project 1</h3>
+                    <p>Responsive AI Chatgpt , which Can Solve Your All Doubts .</p>
+                    <a href="#" class="btn">View Project</a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <img src="e commerce.jpeg" alt="Project 2">
+                <div class="project-info">
+                    <h3>Project 2</h3>
+                    <p>E-commerce Website using React and Firebase.</p>
+                    <a href="#" class="btn">View Project</a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <img src="app.jpeg" alt="Project 3">
+                <div class="project-info">
+                    <h3>Project 3</h3>
+                    <p>Weather App with real-time API integration.</p>
+                    <a href="#" class="btn">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="services">
+        <h2>My Services</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <i class="fas fa-code"></i>
+                <h3>Web Development</h3>
+                <p>Creating responsive and modern websites using HTML, CSS, JavaScript, and React.</p>
+            </div>
+    
+            <div class="service-card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>UI/UX Design</h3>
+                <p>Designing user-friendly and visually appealing interfaces with Figma and Adobe XD.</p>
+            </div>
+    
+            <div class="service-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Mobile Optimization</h3>
+                <p>Ensuring that websites are fully optimized and responsive on all devices.</p>
+            </div>
+    
+            <div class="service-card">
+                <i class="fas fa-search"></i>
+                <h3>SEO Optimization</h3>
+                <p>Improving website ranking on search engines through SEO best practices.</p>
+            </div>
+
+        <div class="service-card">
+            <i class="fas fa-bug"></i>
+            <h3>Debugging</h3>
+            <p>Finding and fixing errors in your code to ensure smooth and efficient performance.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-pen-nib"></i>
+            <h3>Logo Designing</h3>
+            <p>Creating unique and professional logos that represent your brand effectively.</p>
+        </div>
+        </div>
+    </section>
+    
+    <section id="education">
+        <h2>My Education</h2>
+        <div class="education-container">
+            <div class="education-card">
+                <i class="fas fa-school"></i>
+                <h3>High School (10th)</h3>
+                <p>Bhangamora N.K.N.C.M. Institution</p>
+                <span>2017 - 2022</span>
+            </div>
+    
+            <div class="education-card">
+                <i class="fas fa-book"></i>
+                <h3>Higher Secondary (12th)</h3>
+                <p>Bhangamora N.K.N.C.M. Institution</p>
+                <span>2022 - 2024</span>
+            </div>
+    
+            <div class="education-card">
+                <i class="fas fa-university"></i>
+                <h3>B.Tech in Information Technology</h3>
+                <p>JIS College of Engineering</p>
+                <span>2024 - 2028</span>
+            </div>
+        </div>
+    </section>
+    
+        <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: prembairi7@gmail.com | Phone: 8100238166</p>
+        
+        <div class="social-links">
+            <a href="https://www.instagram.com/_prembairi?igsh=MXFrMHQydjg5cHJtYw==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/17MErJvZoM/?mibextid=qi2Omg" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://x.com/prembairi7?t=OAC2-ts9hMNagnvMP4sgsg&s=09" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/prem-bairi-b03167288?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Prem Bairi . All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>
